@@ -13,7 +13,7 @@ public class BookDatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "books";
     private static final int SCHEMA_VERSION = 1;
 
-    public BookDatabaseHelper (Context context) {
+    public BookDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA_VERSION);
     }
 
@@ -31,7 +31,7 @@ public class BookDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addFellow(Book book) {
+    public void addBook(Book book) {
         Cursor cursor = getReadableDatabase().rawQuery(
                 "SELECT * FROM " + TABLE_NAME + " WHERE book_title = '" + book.getTitle() +
                         "' AND book_author = '" + book.getAuthor() + "' AND book_genre = '" + book.getGenre() +
@@ -50,17 +50,19 @@ public class BookDatabaseHelper extends SQLiteOpenHelper {
         List<Book> bookList = new ArrayList<>();
         Cursor cursor = getReadableDatabase().rawQuery(
                 "SELECT * FROM " + TABLE_NAME + ";", null);
-        if(cursor != null) {
-            if(cursor.moveToFirst()) {
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
                 do {
                     Book book = new Book(
                             cursor.getString(cursor.getColumnIndex("book_title")),
                             cursor.getString(cursor.getColumnIndex("book_author")),
                             cursor.getString(cursor.getColumnIndex("book_genre")));
+
                     bookList.add(book);
                 } while (cursor.moveToNext());
             }
         }
         return bookList;
     }
+
 }

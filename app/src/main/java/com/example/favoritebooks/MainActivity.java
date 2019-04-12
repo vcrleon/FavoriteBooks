@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.favoritebooks.ui_fragments.BookDetailsFragment;
 import com.example.favoritebooks.ui_fragments.BookDisplayFragment;
+import com.example.favoritebooks.ui_fragments.EditBookFragment;
 import com.example.favoritebooks.ui_fragments.NewBookFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentNavigator{
@@ -40,9 +41,16 @@ public class MainActivity extends AppCompatActivity implements FragmentNavigator
 
     }
 
+    @Override
+    public void displayEditBookDetails(String bookTitle, String bookAuthor, String bookGenre) {
+        final Fragment editBookFragment = EditBookFragment.newInstance(bookTitle, bookAuthor, bookGenre);
+        inflateFragment(editBookFragment);
+    }
+
     private void inflateFragment(@NonNull Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
                 .commit();
     }
 }
