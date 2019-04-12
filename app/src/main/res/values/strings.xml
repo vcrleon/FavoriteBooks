@@ -14,4 +14,6 @@
     <string name="book_author">Book Author</string>
     <string name="book_genre">Book Genre</string>
     <string name="edit_book">Edit Book</string>
+    <string name="save">Save</string>
+    <string name="edit_book_details">Edit Book Details</string>
 </resources>

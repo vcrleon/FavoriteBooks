@@ -1,9 +1,8 @@
-package com.example.favoritebooks.recyclerview;
+package com.example.favoritebooks.controller;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
