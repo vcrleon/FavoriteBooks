@@ -34,8 +34,8 @@ public class BookDisplayFragment extends Fragment {
     private FragmentNavigator fragmentNavigator;
     private BookDatabaseHelper bookDatabaseHelper;
     private BookDisplayAdapter bookDisplayAdapter;
-    private List<Book> bookList;
     private LinearLayoutManager linearLayoutManager;
+    private List<Book> bookList;
 
 
     public BookDisplayFragment() {
@@ -74,6 +74,7 @@ public class BookDisplayFragment extends Fragment {
 
         final Button addBookButton = view.findViewById(R.id.add_book_button);
         final RecyclerView bookRecyclerView = view.findViewById(R.id.book_recycler_view);
+
         bookList.addAll(bookDatabaseHelper.getBookList());
         Collections.reverse(bookList);
         bookDisplayAdapter.notifyDataSetChanged();
