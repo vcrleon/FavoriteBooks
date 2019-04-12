@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">FavoriteBooks</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_book">Add Book</string>
+    <string name="add_book_details">Add Book Details</string>
+    <string name="enter_book_author">Enter Book Author</string>
+    <string name="enter_book_genre">Enter Book Genre</string>
+    <string name="add_new_book">Add New Book</string>
+    <string name="enter_book_title">Enter Book Title</string>
+    <string name="book_details">Book Details</string>
+    <string name="book_title">Book Title</string>
+    <string name="book_author">Book Author</string>
+    <string name="book_genre">Book Genre</string>
+    <string name="edit_book">Edit Book</string>
 </resources>
