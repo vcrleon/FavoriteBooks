@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.favoritebooks.ui_fragments.BookDisplayFragment;
+import com.example.favoritebooks.ui_fragments.NewBookFragment;
+
 public class MainActivity extends AppCompatActivity implements FragmentNavigator{
 
     @Override
@@ -17,11 +20,15 @@ public class MainActivity extends AppCompatActivity implements FragmentNavigator
 
     @Override
     public void displayBooks() {
+        final Fragment bookFragment = BookDisplayFragment.newInstance();
+        inflateFragment(bookFragment);
 
     }
 
     @Override
     public void displayNewBookForm() {
+        final Fragment displayBookFragment = NewBookFragment.newInstance();
+        inflateFragment(displayBookFragment);
 
     }
 
